@@ -1,943 +1,329 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>KALSNET (KNet) Consulting Services</title>
+    <meta charset="UTF-8">
+    <title>Kalsnet Cyber Defense Applications Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <style>
-        html { scroll-behavior: smooth; }
         body {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0e1a2b;
-            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            background-color: #0b1a2f;
+            color: white;
         }
+
         header {
-            background-color: #08111f;
+            background: #102a43;
+            padding: 20px;
             text-align: center;
-            padding: 40px 20px;
-        }
-        header img { width: 120px; height: auto; }
-        header h1 { font-size: 2.5rem; margin: 10px 0 5px; }
-        header h2 { font-size: 1.2rem; margin: 5px 0 10px; color: #ffffffcc; }
-        header p { font-size: 1.1rem; }
-        .cta-button {
-            display:inline-block; margin-top:20px; padding:10px 20px; background:#007BFF; color:white; text-decoration:none; border-radius:5px;
-        }
-        .section { padding:40px 20px; max-width:1100px; margin:auto; }
-        .section h2 {
-            border-bottom:3px solid #00a8ff;
-            padding-bottom:10px;
-            margin-bottom:20px;
-            color:#ffffff;
-            font-weight:800;
-            letter-spacing:.2px;
-        }
-        .columns { display:flex; justify-content:space-around; flex-wrap:wrap; }
-        .column { flex:1; margin:10px; padding:20px; background:#1c2e4a; border-radius:8px; min-width:250px; }
-        .about-container { display:flex; align-items:flex-start; }
-        .about-container img { width:150px; height:auto; margin-right:20px; border-radius:12px; }
-        .hub-link {
-            display:inline-block; font-size:1.05rem; font-weight:600; color:#1a73e8;
-            text-decoration:none; margin-top:10px; background:#ffffff10; padding:10px 14px; border-radius:8px;
-        }
-        .hub-link:hover { text-decoration:underline; background:#007BFF; color:white; }
-
-        /* Hub content styling */
-        .intro, .app-section, .brochure-section {
-            background:linear-gradient(145deg,#102744,#1b3d63);
-            color:#eef6ff;
-            padding:20px;
-            border:1px solid #356b9d;
-            border-radius:12px;
-            box-shadow:0 6px 18px rgba(0,0,0,.22);
-            margin:20px 0;
-        }
-        .intro h2, .app-section h2, .brochure-section h2 {
-            color:#ffffff;
-            font-weight:800;
-            border-bottom:2px solid #00a8ff;
-            padding-bottom:8px;
-        }
-        .intro p, .app-section p, .brochure-section p {
-            color:#eef6ff;
-            line-height:1.7;
-        }
-        .app-section strong {
-            color:#ffffff;
-            font-weight:800;
-        }
-        .app-link {
-            display:inline-block; margin-top:15px; padding:12px 20px; background:#0073e6; color:white; text-decoration:none; border-radius:8px; font-size:16px; transition:0.3s;
-        }
-        .app-link:hover { background:#005bb5; }
-
-        /* Hidden by default */
-        #programming-hub, #knet-brochure-section { display:none; }
-
-        /* PDF Brochure */
-        .pdf-container { margin-top:20px; }
-        .pdf-iframe { width:100%; height:600px; border:2px solid #3987c9; border-radius:8px; }
-
-        .footer { text-align:center; padding:20px; background:#08111f; color:#ccc; margin-top:30px; }
-
-        @media (max-width:700px) {
-            .columns { flex-direction:column; }
-            header h1 { font-size:1.8rem; }
-        }
-    
-        /* Professional Experience & Core Competencies */
-        #core-capabilities .column {
-            background:linear-gradient(145deg,#102744,#1b3d63);
-            border:1px solid #356b9d;
-            border-top:4px solid #00a8ff;
-            color:#f1f7ff;
-            box-shadow:0 6px 16px rgba(0,0,0,.22);
-        }
-        #core-capabilities .column h3 {
-            color:#ffffff;
-            font-weight:800;
-        }
-        #core-capabilities .column li {
-            color:#e9f3ff;
-            margin-bottom:6px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #00d4ff;
+            border-bottom: 2px solid #00d4ff;
         }
 
-        .experience-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-            gap:20px;
-            margin-top:20px;
-        }
-        .experience-card {
-            background:linear-gradient(145deg,#102744,#1b3d63);
-            border:1px solid #356b9d;
-            border-left:6px solid #00a8ff;
-            border-radius:10px;
-            padding:22px;
-            box-shadow:0 5px 15px rgba(0,0,0,.18);
-        }
-        .experience-card h3 {
-            color:#ffffff;
-            font-weight:800;
-            margin:0 0 10px;
-            font-size:1.12rem;
-            letter-spacing:.15px;
-        }
-        .experience-card p {
-            line-height:1.65;
-            margin:0;
-            color:#e7eef7;
-        }
-        .experience-card ul {
-            margin:10px 0 0 18px;
-            padding:0;
-            color:#e7eef7;
-            line-height:1.6;
-        }
-        .experience-highlight {
-            background:linear-gradient(145deg,#102744,#1d4168);
-            color:#ffffff;
-            border:1px solid #2f5d8f;
-            border-left:6px solid #00a8ff;
-            border-radius:10px;
-            padding:24px;
-            margin:20px 0;
-            box-shadow:0 6px 18px rgba(0,0,0,.25);
-        }
-        .experience-highlight h3 {
-            color:#ffffff;
-            font-weight:800;
-            margin-top:0;
-            margin-bottom:12px;
-            letter-spacing:.2px;
-        }
-        .experience-highlight p {
-            color:#f1f7ff;
-            line-height:1.7;
-        }
-        .skill-tags {
-            display:flex;
-            flex-wrap:wrap;
-            gap:9px;
-            margin-top:15px;
-        }
-        .skill-tag {
-            background:#0b3157;
-            color:#ffffff;
-            border:1px solid #3987c9;
-            padding:7px 11px;
-            border-radius:20px;
-            font-size:.92rem;
-            font-weight:600;
-        }
-        .timeline {
-            border-left:3px solid #007BFF;
-            margin:25px 0 10px 10px;
-            padding-left:25px;
-        }
-        .timeline-item {
-            margin-bottom:25px;
-            position:relative;
-        }
-        .timeline-item::before {
-            content:"";
-            width:12px;
-            height:12px;
-            background:#007BFF;
-            border:3px solid #0e1a2b;
-            border-radius:50%;
-            position:absolute;
-            left:-33px;
-            top:5px;
-        }
-        .timeline-item h3 {
-            margin:0 0 6px;
-            color:#ffffff;
-            font-weight:800;
-        }
-        .timeline-item p {
-            margin:0;
-            line-height:1.6;
-            color:#e8f2ff;
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
         }
 
+        .card {
+            background: #132f4c;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 10px rgba(0, 212, 255, 0.3);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            color: #00d4ff;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #00d4ff;
+            color: black;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #00aacc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #102a43;
+            border-top: 1px solid #00d4ff;
+        }
     </style>
 </head>
+
 <body>
-    <header>
-        <img src="Kalsnet_logo.png" alt="Kalsnet Logo">
-        <h1>KALSNET (KNet) Consulting Services</h1>
-        <h2>Securing the Future Through AI and Cyber Resilience</h2>
-        <p>35+ Years of Experience & Expertise in Cybersecurity, AI, and Emerging Technologies</p>
-        <p>MERITORIOUS SERVICE AWARD RECIPIENT </p>
-        <a href="#contact" class="cta-button">Schedule a Consultation</a>
-    </header>
 
-    <!-- Executive Technical Profile -->
-    <section class="section" id="executive-profile">
-        <div class="experience-highlight">
-            <h3>Executive Technical Profile</h3>
-            <p>
-                KALSNET (KNet) Consulting Services combines decades of Federal and Defense Technology Experience with modern Cybersecurity, Artificial Intelligence, and Emerging-Technology  
-                Innovation. Our capabilities span Global Command & Control Systems (GCCS), Joint Operations Planning & Execution Systems (JOPES), Joint Certs Incidence Database (JCID) / 
-                DoD Certs Incidence Database (DCID) and other incident management environments, Cyber Defense, Agentic-AI and Graph-Based Threat Detection, Industrial Systems Management, 
-                Emerging-Technology Frameworks and Taxonomies, Automated Policy Engineering, and Data Recovery. Kalsnet (KNet)'s objective is to bridge proven Mission-Systems Expertise 
-                with Next-Generation Technologies to deliver Secure, Resilient, Intelligent, and Operationally useful Solutions.
-            </p>
-        </div>
-    </section>
+<header>
+    KALSNET (KNet) CYBER DEFENSE APPLICATIONS PORTAL
+</header>
 
-    <!-- Our Services -->
-    <section class="section">
-        <h2>Our Services</h2>
-        <div class="columns">
-            <div class="column">
-                <h3>Cybersecurity Advisory</h3>
-                <p>Kalsnet Cyber Defense Advisory delivers AI-Driven, Zero Trust, and Threat Intelligence–Led Cybersecurity Solutions to proactively Defend Mission-Critical Systems and  
-                   Enterprise Environments. We specialize in Cyber Risk Management, SOC Optimization, Threat Hunting, and Incident Response, aligned with NIST, MITRE ATT&CK, FedRAMP, and  
-                   CMMC frameworks. Our approach integrates Predictive Analytics, Autonomous Security Operations, and Real-Time Monitoring to enable Resilient, Adaptive, and 
-                   Next-Generation Cyber Defense.</p>
-            </div>
+<div class="container">
+
+
+    <!-- App 1 -->
+    <div class="card">
+        <h3>CyberGuard-AI-Application</h3>
+        <p> CyberGuard AI is a Streamlit application platform showing 5 AI/ML-driven cybersecurity use cases:
+             Autonomous SOC triage
+             Vulnerability prioritization
+             Behavioral anomaly detection
+             Incident response/attack-path mapping
+             Identity & AI-agent risk scoring
+       How AI and cybersecurity intersect here: Cybersecurity has traditionally relied on static rules and known signatures, which break down against novel, 
+       fast-moving, or insider threats and generate overwhelming alert volume. AI addresses both problems at once — it detects patterns humans and rule-engines
+       miss, and it automates the repetitive scoring/triage work that consumes analyst time, letting a small security team operate at enterprise scale.
             
-            <div class="column">
-                <h3>AI/ML/Agentic-AI Solution Development</h3>
-                <p>We deliver advanced AI/ML and Agentic-AI Solutions leveraging Autonomous Decision-Making, Predictive Analytics, and Adaptive Learning Models 
-                   to drive Mission-Critical outcomes. Our platform integrates LLM-powered reasoning, Multi-Agent Orchestration, Real-Time Data Fusion, and Intelligent 
-                   Automation for Scalable, Enterprise-Grade Performance.Enabling Self-Healing Systems, Proactive Threat Detection, and Continuous Optimization, we Transform 
-                   data into Actionable Intelligence and Autonomous Operations.</p>
-            </div>
+       AI's role: it moves each module beyond static rules by scoring, correlating, and prioritizing data the way an analyst would, then generating a recommended 
+       action automatically. In modules 1, 2, 4, and 5 that's rule-weighted AI scoring (feature-based formulas that blend severity, exploitability, exposure, 
+       dormancy, etc. into a single risk score). Module 3 uses real machine learning: scikit-learn's Isolation Forest, an unsupervised anomaly-detection algorithm 
+       that learns normal behavior patterns and flags statistical outliers without predefined rules or labeled attack data — the same category of technique 
+       (unsupervised/behavioral ML) that underpins modern EDR, UEBA, and cloud threat-detection products.
+
+        Stack: Python, Streamlit (UI), pandas/NumPy (data processing), scikit-learn (ML), NetworkX + Matplotlib (attack-path graphs/charts), python-docx and 
+        ReportLab (report export).
+
+        Real-world benefits: cuts SOC triage time by auto-correlating alerts into incidents, focuses patching on what attackers would actually exploit, catches 
+        novel/insider threats before signatures exist, speeds containment by reconstructing kill chains, and shrinks identity attack surface across humans, 
+        service accounts, and AI agents — with explainable, auditable scoring rather than a black box, reflecting where the industry is headed: 
+        AI-augmented defense that scales with the volume and speed of modern attacks.</p>
             
-            <div class="column">
-                <h3>API Security Solutions</h3>
-                <p>Secure API integration and validation, API Discovery, Posture Assessment, and Runtime Protection Including F5, NetScout, EMASS, DITPR, MAPS, SIEM & SOAR    
-                   Integrations.</p>
-            </div>
-            <div class="column">
-                <h3>Emerging Tech Consulting</h3>
-                <p>Custom ML models for Threat Detection, Anomaly Detection, Real Estate Price Prediction, AI/ML Security, Data Labeling, Command & Control Simulations, and Technology 
-                   Roadmap Development.</p>
-            </div>
-            <div class="column">
-                <h3>Application Development</h3>
-                <p>GUI-based Python and Java applications, Secure Web Application Deployment Using Flask, Bootstrap and REST APIs, Custom File Management, PDF/Excel Handling & Visual 
-                   Dashboards, Enterprise-Grade Software Engineering Using Object-Oriented Java, Python, COBOL, ORACLE, and C++. Specializing in Mission-Critical Systems and Modernization  
-                   Efforts.</p>
-            </div>
-        </div>
-    </section>
+        <a href="https://36f6gbewyftjy2y8ey4vab.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-
-    <!-- Professional Experience & Technical Expertise -->
-    <section class="section" id="professional-experience">
-        <h2>Professional Experience &amp; Technical Expertise</h2>
-
-        <div class="experience-highlight">
-            <h3>Mission-Focused Federal &amp; Defense Technology Experience</h3>
-            <p>
-                KALSNET (KNet) Consulting Services brings deep Mission-Focused experience in Defense Information
-                Systems, Command-and-Control Environments, Cybersecurity, Software Engineering, Emerging Technologies,
-                Artificial Intelligence, Data Management, and Enterprise Modernization. The firm's technical
-                foundation includes Development and Support of Mission-Critical Systems, Operational Databases,
-                Cyber Defense Capabilities, Technology Frameworks and Taxonomies, and Intelligent Applications
-                designed to turn Complex Operational data into Actionable Decision Support.
-            </p>
-            <div class="skill-tags">
-                <span class="skill-tag">GCCS</span>
-                <span class="skill-tag">JOPES</span>
-                <span class="skill-tag">JCID</span>
-                <span class="skill-tag">DCID</span>
-                <span class="skill-tag">Cyber Defense</span>
-                <span class="skill-tag">Agentic AI</span>
-                <span class="skill-tag">Graph Databases</span>
-                <span class="skill-tag">Emerging Technology Frameworks</span>
-                <span class="skill-tag">Policy Engineering</span>
-                <span class="skill-tag">Data Recovery</span>
-                <span class="skill-tag">Industrial Systems</span>
-                <span class="skill-tag">AI/ML</span>
-            </div>
-        </div>
-
-        <div class="experience-grid">
-            <div class="experience-card">
-                <h3>1. Global Command &amp; Control Systems (GCCS)</h3>
-                <p>
-                    Extensive experience with Global Command and Control System (GCCS) applications and
-                    mission-support environments. Expertise includes understanding complex operational workflows,
-                    Command-and-Control data, System Integration, Information Exchange, and Development of Software
-                    Capabilities Supporting Mission-Critical users and Decision Makers.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>2. Joint Operations Planning &amp; Execution System (JOPES)</h3>
-                <p>
-                    Strong experience with Joint Operations Planning &amp; Execution System (JOPES) environments,
-                    including the data, processes, applications, and operational workflows supporting joint
-                    planning and execution. This background provides a strong foundation for building secure,
-                    Interoperable Applications for Complex Defense and Operational Missions.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>3. Incident Management &amp; CERTS Systems</h3>
-                <p>
-                    Expert-level experience with Incident Management Systems and Cybersecurity Incident data
-                    Environments, including the Joint CERTS Incident Database (JCID) and DoD CERTS Incident
-                    Database (DCID). Experience encompasses Incident Data Management, Event Tracking, Analysis,
-                    Reporting, Operational Awareness, and Development of Capabilities that help security teams
-                    understand and respond to Cyber Incidents.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>4. Emerging Technology Frameworks &amp; Taxonomies</h3>
-                <p>
-                    Proven capability in designing Emerging-Technology Frameworks, Reference Architectures,
-                    Taxonomies, Playbooks, and Technology Roadmaps. Areas include Cybersecurity, API Security,
-                    Cloud, IoT, Edge Computing, 5G/6G, Zero Trust, Agentic AI, MCP, Data Management, and other
-                    Rapidly Evolving Technologies. Kalsnet (KNet) Converts Complex Technologies into Structured,
-                    Understandable, and Reusable Enterprise Frameworks.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>5. Cyber Defense, Threat Detection &amp; Agentic AI</h3>
-                <p>
-                    Development of Cyber Defense Applications and Cyber Threat Detection Solutions using
-                    Machine Learning, Graph-Based Analytics, Graph Databases, Network Relationships, and
-                    Agentic-AI Architectures. These Solutions Support Anomaly Detection, Threat Hunting,
-                    Attack-Path Analysis, MITRE ATT&amp;CK Mapping, Adaptive Incident Response, and
-                    Human-in-the-Loop Security Decision Support.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>6. Industrial Systems Management</h3>
-                <p>
-                    Successfully Developed Applications Supporting Industrial Systems Management and Operational
-                    Environments. Capabilities include Structured Data Management, Monitoring, Analytics,
-                    Visualization, Operational Dashboards, and Decision-Support Functions designed to improve
-                    Visibility and Management of Complex Systems.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>7. Policy Development &amp; Automated Policy Engineering</h3>
-                <p>
-                    Extensive expertise in Cybersecurity and Technology Policy Development, Governance,
-                    Compliance Mapping, and Policy Automation. Kalsnet (KNet) has developed an Automated Policy Developer
-                    Application Capable of helping users Generate Structured Policies Aligned with Organizational
-                    Requirements and Established Cybersecurity and Compliance Frameworks.
-                </p>
-            </div>
-
-            <div class="experience-card">
-                <h3>8. Data Recovery &amp; Information Restoration</h3>
-                <p>
-                    Expertise in Data Recovery Techniques and Information Restoration, including approaches for
-                    Recovering, Validating, Organizing, and Preserving data following System Failures, Corruption,
-                    Accidental Deletion, or other Disruptive Events. This capability complements Kalsnet (KNet)'s broader
-                    Data-Management, Cybersecurity, Continuity, and Resilience Services.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Core Technical Capabilities -->
-    <section class="section" id="core-capabilities">
-        <h2>Core Technical Capabilities</h2>
-        <div class="columns">
-            <div class="column">
-                <h3>Defense &amp; Mission Systems</h3>
-                <ul>
-                    <li>GCCS application environments</li>
-                    <li>JOPES operational planning systems</li>
-                    <li>JCID and DCID incident management/data environments</li>
-                    <li>Command-and-control data integration</li>
-                    <li>Mission-critical application modernization</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h3>Cyber Defense &amp; AI</h3>
-                <ul>
-                    <li>Agentic-AI Cyber Defense Applications</li>
-                    <li>Graph Database Threat Analytics</li>
-                    <li>AI/ML Anomaly and Threat Detection</li>
-                    <li>Threat Hunting and Adaptive Incident Response</li>
-                    <li>MITRE ATT&amp;CK and Zero Trust Alignment</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h3>Frameworks, Policy &amp; Governance</h3>
-                <ul>
-                    <li>Emerging Technology Frameworks and Taxonomies</li>
-                    <li>Cybersecurity Policy Development</li>
-                    <li>Automated Policy Generation</li>
-                    <li>Technology Roadmaps and Reference Architectures</li>
-                    <li>Compliance and Governance Automation</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h3>Data &amp; Operational Resilience</h3>
-                <ul>
-                    <li>Data Recovery and Restoration</li>
-                    <li>Industrial Systems Management Applications</li>
-                    <li>Data Engineering and Analytics</li>
-                    <li>Operational Dashboards and Visualization</li>
-                    <li>Resilience and Continuity Support</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Experience Timeline -->
-    <section class="section" id="technical-journey">
-        <h2>Technical Experience at a Glance</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Mission-Critical Defense Systems</h3>
-                <p>
-                    Experience Supporting Command-and-Control, Joint Planning, Incident Management, and
-                    Mission-Support Applications in Complex Federal and Defense Environments.
-                </p>
-            </div>
-            <div class="timeline-item">
-                <h3>Cybersecurity &amp; Emerging Technologies</h3>
-                <p>
-                    Progression from Traditional Enterprise and Defense Systems into Cybersecurity, API Security,
-                    Cloud, IoT, Edge, 5G/6G, Zero Trust, AI/ML, Agentic AI, and Intelligent Cyber Defense.
-                </p>
-            </div>
-            <div class="timeline-item">
-                <h3>Framework &amp; Application Innovation</h3>
-                <p>
-                    Development of Reusable Frameworks, Taxonomies, Playbooks, Dashboards, Threat Detectors,
-                    Policy Automation Solutions, and Decision-Support Applications through Kalsnet (KNet) Consulting.
-                </p>
-            </div>
-            <div class="timeline-item">
-                <h3>Data Resilience &amp; Intelligent Automation</h3>
-                <p>
-                    Integration of Data Recovery, Data Analytics, Graph-Based Intelligence, Automated Policy
-                    Engineering, and Agentic-AI workflows to improve Resilience, Security, and Operational
-                    Decision-Making.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Us -->
-    <section class="section" id="about">
-        <h2>About Us</h2>
-        <div class="about-container">
-            <img src="Kalsnet_logo.png" alt="Kalsnet Logo">
-            <div>
-                <p>KALSNET (KNet) Consulting Services is led by a veteran Computer Scientist with Extensive Federal and Defense Experience in Cybersecurity,
-                   Software Engineering, Mission-Critical Systems, Strategic IT Management, and Emerging Technologies. The firm's Technical Foundation Includes
-                   GCCS and JOPES environments, Cyber Incident Management Systems including JCID and DCID, and the Development of Emerging-Technology Frameworks,
-                   Taxonomies, Cyber Defense Applications, and Intelligent Decision-Support Capabilities.</p>
-                <p>Our Founder has developed and Modernized Mission-Focused Applications, Cyber Defense and Threat Detection Solutions using Graph Databases and
-                   Agentic AI, Industrial Systems Management Applications, Automated Policy Development Capabilities, and Data Recovery Solutions. Kalsnet(KNet) combines
-                   this Operational Experience with modern AI/ML, Zero Trust, API Security, Cloud, and Secure Application Engineering to deliver practical,
-                   Mission-Aligned Technology Solutions.</p>
-                <p>We bring deep Technical Experience in Full-Stack Application Development, Legacy System Modernization, and Secure System Design using Industry-Standard Programming 
-                   Languages and Development Methodologies. Deep Understanding of Federal Policies, NIST Frameworks, and Compliance Standards.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Differentiators -->
-    <section class="section">
-        <h2>Differentiators</h2>
-        <ul>
-            <li>35+ years of Federal Government Experience in Cybersecurity, AI/NLP, and Emerging Technologies</li>
-            <li>Framework Development for Detecting and Mitigating Command & Control (C2) Cyber Attacks</li>
-            <li>Command & Control Simulation Engine Java/Python-Based System Demonstrating Real-World Cyber Threats and Countermeasure Simulations</li>
-            <li>Unified Cyber Threat Detection System, GUI and Web-Based Platform Integrating AI agents, Graph Databases, and ML Detection for Real-Time Threat Analysis</li>
-            <li>AI-Powered Weather Forecasting and Real Estate Agents, LangChain-Based Intelligent Systems that Analyze User Prompts, Location, and Context to Deliver Smart Forecasts and 
-                Real-Estate Pricing.</li>
-            <li>Strong background in Teaching, Training, and Mentoring Technology Teams</li>
-            <li>Design and Implementation of Cybersecurity Playbooks using Real & Synthetic Data</li>
-            <li>Global Command &amp; Control System (GCCS) and Joint Operations Planning &amp; Execution System (JOPES) experience</li>
-            <li>Incident management expertise including JCID and DoD CERTS Incident Database (DCID) environments</li>
-            <li>Emerging Technology Frameworks, taxonomies, reference architectures, and technology roadmaps</li>
-            <li>Graph Database and Agentic-AI based Cyber Threat Detection and Cyber Defense application development</li>
-            <li>Industrial Systems Management application development and operational analytics</li>
-            <li>Cybersecurity Policy Development and Automated Policy Developer solutions</li>
-            <li>Data Recovery, restoration, validation, and information-resilience techniques</li>
-        </ul>
-    </section>
-
-    <!-- Company Info & Links -->
-    <section class="section">
-        <h2>Company Information</h2>
-        <p>
-            <strong>UEI:</strong> WWECMCC1A513 <br>
-            <strong>NAICS Codes:</strong> 541512, 541511, 541519 <br>
-            <strong>Business Type:</strong> Technology Consulting &amp; Cybersecurity Solutions <br>
-            <strong>Location:</strong> Washington D.C. Metro Area <br>
-            <strong>Website:</strong> <a href="https://kalsr.github.io/KNet/" target="_blank">https://kalsr.github.io/KNet/</a>
-        </p>
-        
-        
-       <p style="margin-top:18px;">   
-       <a href="https://kalsr.github.io/KNet_Programming_Hub/" target="_blank" class="hub-link">
-               <strong> General-Applications </strong> <br>
-           
-
-       <a href="https://kalsr.github.io/Cyber-Defense-Applications/" target="_blank" class="hub-link">
-               <strong> CYBER DEFENSE APPLICATIONS </strong> <br>
-
-       <a href="https://kalsr.github.io/Agentic-AI-Launchpad/" target="_blank" class="hub-link">
-              <strong> AI/AGENTIC-AI APPLICATIONS </strong> <br>
-
-        <a href=" https://kalsr.github.io/AI-POLICY-DEVELOPMENT-GOVERNANCE-APPLICATIONS/" target="_blank" class="hub-link">
-              <strong> AI-POLICY-DEVELOPMENT-GOVERNANCE-APPLICATIONS </strong> <br>
-
-        <a href="https://kalsr.github.io/Kalsnet-Data-Recovery-Hub/" target="_blank" class="hub-link">
-              <strong> KALSNET-DATA-RECOVERY-HUB</strong> <br>
-
-
-        <a href="https://kalsr.github.io/EMERGING-TECHLOGIES-FRAMEWORKS/" target="_blank" class="hub-link">
-               <strong> EMERGING-TECHNOLOGIES-FRAMEWORKS </strong> <br>
-
-      <a href="javascript:void(0)" onclick="toggleBrochure()" class="hub-link">KNet Brochure</a><br>
-        
-      
-         
-    </section>
-
-    <!-- BROCHURE -->
-<section id="knet-brochure-section" class="section">
-<h2>KNet Brochure</h2>
-<iframe src="KNet Brochure.pdf" width="100%" height="600"></iframe>
-</section>
-
-
-
-    <!-- Programming Hub (Merged Full Index) -->
-    <section id="programming-hub" class="section" aria-hidden="true">
-        <!-- Merged content from the KNet Designed Applications index.html -->
-        <h1>KNet Designed Applications - Randy Singh</h1>
-
-        <div class="intro">
-            <h2>About These Applications</h2>
-            <p>
-                Kalsnet (KNet) Programming Hub is a specialized innovation center developed by KNet Consulting Group, focused on building intelligent, secure, and future-ready digital 
-                solutions. Our hub brings together expertise in data science, artificial intelligence, cyber defense, and automation to design programs that simplify complex tasks and 
-                deliver actionable insights. At Kalsnet (KNet), we have developed a diverse suite of applications ranging from autonomous data analysts, financial forecasters, anomaly 
-                detection systems, and visualization dashboards to cybersecurity threat monitoring, AI-powered agents, and workflow automation tools. Each program is carefully architected 
-                using modern toolkits such as Python, Streamlit, Pandas, NumPy, Scikit-learn, Matplotlib, Docker, and Flask, ensuring reliability, scalability, and user-friendly design.
-
-                Our strength lies in leveraging Agentic-AI systems a new paradigm where multiple specialized agents (e.g., ingestors, cleaners, analyzers, anomaly detectors, segmenters,  
-                and modelers) collaborate autonomously to handle complex workflows. This agent-based architecture is especially valuable in cyber defense, where real-time monitoring, 
-                pattern recognition, and adaptive response are critical. By embedding Model Context Protocol (MCP), we enable seamless integration between AI models, external tools, and 
-                secure workflows, allowing our programs to reason, fetch context, and act with precision. MCP ensures interoperability and trust, while Agentic-AI adds autonomy and 
-                adaptability.
-
-                Through these technologies, KNet empowers organizations to defend digital assets, detect anomalies, forecast risks, and optimize decisions without requiring deep technical 
-                expertise from users. Every solution is designed to work as a digital co-pilot, automating repetitive tasks while keeping humans in control of strategy. The benefit to  
-                users is clear: faster insights, improved security posture, reduced manual errors, and a scalable framework that adapts to evolving business and cyber challenges. 
-                In short, KNet Programming Hub transforms raw data and complex systems into intelligent, secure, and easy-to-use solutions giving our clients the confidence to innovate  
-                safely in a digital-
-              first world.
-            </p>
-            <p style="margin-top:8px;">
-                Core libraries and tools include <em>Streamlit</em> for interactive interfaces,
-                <em>Pandas/Numpy</em> for data processing, <em>Matplotlib/Plotly</em> for visualization,
-                and <em>scikit-learn</em> or custom ML models for analytics.
-            </p>
-        </div>
-
-        <!-- Applications -->
-
-        <div class="app-section">
-            <div id="Enterprise-AI-Intelligence-Platform" class="app-section app-explanation">
-  <h2>Enterprise-AI-Intelligence-Platform - Randy Singh</h2>
-  <p>
-      The KALSNET AI Vision Enterprise Platform is an interactive enterprise-grade AI simulation and analytics application designed
-      to demonstrate real-time risk intelligence, cybersecurity posture assessment, and executive decision support across commercial, 
-      federal, and defense environments. Developed using modern Python technologies including Streamlit for web-based user interfaces, Pandas and NumPy 
-      for data engineering and synthetic data modeling, Plotly and Matplotlib for advanced visual analytics, and ReportLab for automated executive 
-      reporting, the platform enables users to generate or upload datasets and immediately evaluate operational risk through explainable AI scoring models. 
-      The application calculates Agentic Risk Scores, organizational risk categories, and FedRAMP-style readiness metrics while mapping simulated activity
-      to MITRE ATT&CK techniques for cyber threat awareness. In real-world scenarios, organizations can use this platform for executive briefings, 
-      AI governance demonstrations, cybersecurity training exercises, fraud analytics simulations, proposal demonstrations, and Zero-Trust readiness assessments. 
-      By combining visualization, explainability, and exportable compliance reporting into a single dashboard, the solution helps leadership teams rapidly 
-      understand enterprise exposure, prioritize mitigation actions, and improve decision confidence across hybrid cloud and mission-critical environments 
-      developed by Kalsnet (KNet) Consulting Group.
-  </p>
-  <a class="app-link" href="https://mnnmdxnskpaveeiegescjg.streamlit.app/ " target="_blank">Open Application</a>
-</div>
-
-
-<div class="app-section">
-<div id="autonomous-Data-Analyst-content" class="app-section app-explanation">
-<h2>Agentic-AI-BASED-AUTONOMOUS-DATA-ANALYST- Randy Singh</h2>
-  <p>
-    This Autonomous Data Analyst (Agentic-AI) Application is a Streamlit-based application designed to let users quickly explore, clean, and analyze datasets with minimal effort. It combines traditional Data Science Tools like Pandas (for data handling), NumPy (for numerical operations), Scikit-learn (for clustering and regression), SciPy (for anomaly detection), and Matplotlib library (for charts and visualizations) into a single, easy-to-use interface. The program works through a pipeline of specialized Agentic-AI components (or “agents”) that each perform a focused task: the Ingestor Agent loads datasets from CSV/JSON or generates synthetic data, the Cleaner Agent fixes missing values and removes duplicates, the Summarizer Agent provides statistical overviews, the Anomaly Detector Agent flags outliers using z-scores, the Segmentation Agent applies KMeans clustering to discover hidden groups, and the Modeling Agent builds a quick linear regression model to test predictive relationships. These agents are orchestrated in sequence, allowing users to run partial or full analysis with the click of a button. The system also provides interactive visual insights (pie charts, bar charts, line graphs) and allows exporting cleaned datasets and detailed reports. By automating routine analysis steps, this Agentic-AI approach empowers business users, analysts, and decision-makers to detect trends, spot risks, understand customer groups, and build simple predictive models without writing code. The benefit to users is Speed, Clarity, and Repeatability—Turning raw data into Actionable Insights in just a few clicks.
-
-  </p>
-  <a class="app-link" href="https://mmpc9szucajvcaffgehssn.streamlit.app/ " target="_blank">Open Application</a>
-</div>
-
-<div class="app-section">
-            <h2>Agentic-AI-Dashboard-with-Top-10-Agentic-AI Use-Cases - Designed By Randy Singh</h2>
-            <p>
-                The Agentic AI Dashboard is an advanced, interactive data intelligence platform developed using Streamlit, Pandas, NumPy, and Matplotlib. Designed by KNet Consulting Group,  it enables users to explore, analyze, and visualize performance metrics across multiple Agentic AI use cases — including cybersecurity, finance, healthcare, robotics, and more.
-
-Through its intuitive graphical interface, users can either generate synthetic data dynamically using a 0–100 slider or upload their own datasets in CSV, Excel, or JSON formats. The system provides real-time visual analytics through bar, pie, and line charts, and allows seamless export of insights in timestamped files for easy documentation or sharing.
-
-With color-coded interactive buttons, a clean professional design, and Reset/Refresh controls for rapid scenario switching, the dashboard delivers a powerful, user-friendly environment for AI-driven decision intelligence, research, and demonstration purposes.
-                <em>Benefit:</em> the Agentic AI Dashboard represents a fusion of automation, analytics, and visualization, empowering users to simulate, understand, and communicate complex AI performance data effortlessly.
-            </p>
-            <a class="app-link" href="https://gpqzcl764t7ymrzerjb3g4.streamlit.app/ " target="_blank">Open Agentic-AI Dashboard</a>
-        </div>
-
-        <div class="app-section">
-            <h2>Agentic-AI-Cyber-Defense-Framework - Randy Singh</h2>
-            <p>
-                The Agentic-AI-Framework is an interactive Python/Streamlit platform where users can explore autonomous 
-                AI agents for cybersecurity. Users can upload or generate sample datasets, run demo agents for 
-                Threat Hunting, Adaptive Incident Response, Vulnerability Scanning, Phishing Defense, and Cyber Deception, 
-                visualize results with dynamic charts, and export outcomes in CSV or JSON. The system leverages 
-                <strong>Streamlit</strong>, <strong>Pandas</strong>, <strong>NumPy</strong>, <strong>Matplotlib/Plotly</strong>, 
-                and integrates tools like <strong>LangChain</strong>, <strong>Scapy</strong>, and <strong>Shodan</strong> to 
-                provide real-time insights and automated cyber defense actions.  
-                <em>Benefit:</em> Users gain hands-on understanding of autonomous AI agents, see live threat analysis, and can test defense workflows safely.
-            </p>
-            <a class="app-link" href="https://u5qdmlxtobaufjbujsjbtg.streamlit.app/" target="_blank">Open Agentic-AI Framework</a>
-        </div>
-
-        <div id="Agentic-Cyber-content" class="app-section app-explanation">
-       <h2>Agentic-Cyber-Threat-Hunting </h2>
-      <p>
-      The Agentic Cyber ML application is a web-based cybersecurity demo built with Streamlit, designed for threat detection, analysis, and visualization. It allows users to either 
-      generate synthetic network logs or upload real logs (CSV, JSON, Excel) containing timestamps, source/destination IPs, protocols, and byte counts. The program creates numeric features 
-      from these logs, such as encoded protocol and source-destination pair counts, and applies IsolationForest from scikit-learn for unsupervised anomaly detection. Logs are scored with 
-      an anomaly score and categorized as ALLOW, SUSPECT, or BLOCK, while Admin users can auto-quarantine top anomalous IPs. The app provides visualizations including anomaly histograms 
-      (via Plotly Express) and network graphs (via NetworkX and Plotly Graph Objects) to highlight traffic patterns and quarantined nodes. Users can download results in CSV, JSON, or Excel 
-      formats and maintain audit logs for tracking all actions.
-
-      The program is role-based: Admin can generate data, train models, score logs, perform auto-containment, reset the session, and view all audit logs; Analyst can generate data, train 
-      models, score logs, and upload files, but cannot auto-contain or reset; Viewer can only generate sample data, upload logs, and view results. This structured approach ensures 
-      security, accountability, and controlled access, while providing a user-friendly interface for proactive threat hunting, anomaly detection, and network monitoring.
-  </p>
-  <a class="app-link" href="https://rcx76yfavqzygsdxvx5qfp.streamlit.app/" target="_blank">Open Application</a>
-</div>
-
-
-        <div class="app-section">
-            <h2>MCP-Cybersecurity-Framework - Randy Singh</h2>
-            <p>
-                The MCP (Model Context Protocol) Framework is a comprehensive platform for monitoring, analyzing, and responding to cybersecurity threats using AI/ML models and automated workflows. 
-                <em>Benefit:</em> Provides centralized threat monitoring, predictive alerts, automated responses, and continuous learning to improve overall cybersecurity posture.
-            </p>
-            <a class="app-link" href="https://iexfg4hykjjmoh9dddrqzi.streamlit.app/"target="_blank">Open MCP Framework</a>
-            <div>
-
-        <!-- Include all other applications as in the full hub index.html -->
-        <div class="app-section">
-            <h2>Agentic-AI Cyber Threat Detector - Randy Singh</h2>
-            <p>
-                Uses Agentic AI agents to monitor networks, endpoints, and cloud workloads for threats.  
-                Built with <strong>Streamlit</strong>, <strong>Pandas</strong>, anomaly-detection ML models, 
-                and visualization tools, it reduces false positives and adapts in real-time.  
-                <em>Benefit:</em> Enables proactive defense against sophisticated cyberattacks.
-            </p>
-            <a class="app-link" href="https://jotrfdfnbfxshgjs6ttxmj.streamlit.app/" target="_blank">Open Application</a>
-        </div>
-
-        <div class="app-section">
-            <h2>MCP-Cyber-Threat-Monitor - Randy Singh</h2>
-            <p>
-                Provides real-time dashboards to track and visualize threat activity across domains.  
-                Built using <strong>Streamlit</strong>, <strong>Matplotlib/Plotly</strong>, and the MCP pipeline.  
-                <em>Benefit:</em> Helps security teams quickly detect and respond to abnormal behaviors.
-            </p>
-            <a class="app-link" href="https://j8d42pf2utsqjnbpvpoetm.streamlit.app/" target="_blank">Open Application</a>
-        </div>
-
-        <div class="app-section">
-            <h2>MCP-Cyber-Threat Dashboard - Randy Singh</h2>
-            <p>
-                Focused on visualization-first monitoring of cyber threat intelligence and AI-driven anomaly detection.  
-                Developed with <strong>Streamlit</strong>, <strong>Plotly Dashboards</strong>, and data pipelines.  
-                <em>Benefit:</em> Gives executives and analysts a clear view of enterprise-wide threats.
-            </p>
-            <a class="app-link" href="https://j8d42pf2utsqjnbpvpoetm.streamlit.app/" target="_blank">Open Application</a>
-        </div>
-
-        <div class="app-section">
-            <h2>Agentic-AI-Adaptive-Incident-Response Use-Case - Randy Singh</h2>
-            <p>
-                The Agentic Adaptive Incident Response Streamlit App is an AI-powered platform for managing cybersecurity events. 
-                It allows users to generate or upload event data in CSV, JSON, or text formats. 
-                The app visualizes incidents with pie charts, bar charts, and time-trend graphs using Matplotlib, Pandas, and NumPy. 
-                Events are scored either heuristically or via optional ML models built with scikit-learn. 
-                Users can simulate responses like host isolation, IP blocking, or sending SOC alerts. 
-                Live actions can be executed via SSH (Paramiko) or cloud SDKs for AWS, GCP, and Azure. 
-                Alerts can also be delivered through webhooks or SMTP email notifications. 
-                A history log and runbook allow reviewing or replaying all actions. 
-                The system supports scalable sample-data generation and dynamic dashboards. 
-                Real-world benefits include faster, safer, and standardized incident response, improving SOC efficiency and operational resilience.
-            </p>
-            <a class="app-link" href="https://knet-brochure-6ekq7dpmf9ynhs2vw6naww.streamlit.app/" target="_blank">Open Application</a>
-        
-            </div>
-           
-             <div class="app-section">
-            <h2>GLOBAL-THREAT-6G-Use-Case - Randy Singh</h2>
-            <p>
-                How the Application Works:
-
-               The AEGIS-6X application simulates a 6G-enabled, AI-driven threat intelligence platform that ingests real or synthetic threat data, applies machine-learning anomaly 
-               detection, and fuses edge and core risk signals into a unified risk score. Role-based access control ensures analysts, commanders, and administrators see only authorized 
-               capabilities. The system visualizes threats through interactive dashboards, satellite-style geospatial maps, trend analytics, and digital-twin forecasting. AI models detect 
-               anomalies, measure confidence, monitor data drift, and optionally generate human-readable intelligence briefs using LLMs, ensuring explainable, human-in-the-loop decision 
-               support. All actions are audit-logged for compliance and NATO/DISA alignment.
-
-               Tools & Technologies Used:
-
-              The platform is built using Streamlit for secure web-based visualization and UI, Pandas and NumPy for data processing, and Scikit-learn for machine-learning models such as 
-              Isolation Forest and Linear Regression. Plotly provides interactive charts and global satellite-style threat maps. OpenAI LLMs (optional) generate analyst summaries and 
-              executive intelligence briefs. FPDF enables export of STANAG-style reports, while JSON-based audit logging ensures traceability and accountability.
-
-             Real-World Benefits:
-
-             AEGIS-6X enables faster, more confident decision-making by detecting high-risk threats in real time and presenting them in an intuitive, mission-focused dashboard. It reduces 
-             analyst overload through automated ano maly detection and AI-generated summaries while maintaining human oversight. The platform supports JADC2, DISA, and NATO coalition 
-             operations by integrating cyber, SIGINT, and kinetic threat indicators into a single operational picture. Its 6G-ready architecture ensures ultra-low latency, edge-based 
-             decisions, and survivability in contested environments. Ultimately, AEGIS-6X improves mission readiness, operational resilience, and strategic dominance across multi-domain 
-             operations.
-
-
-            </p>
-            <a class="app-link" href="https://dwlxcd8snh27zch6xo3a2h.streamlit.app/ " target="_blank">Open Application</a>
-        
-            </div>
-
-            <div class="app-section">
-            <h2>API-Discovery-and-Risk-Analytics-Platform - Randy Singh</h2>
-            <p>
-                This program is a Streamlit-based Enterprise API Discovery and Risk Analytics platform that automatically discovers APIs from traffic data, assesses their security risk, 
-                and produces executive-ready reports. It can generate realistic synthetic API traffic or ingest real-world CSV/JSON logs for analysis. The application analyzes HTTP 
-                methods, authentication types, and API versions to identify unique endpoints and usage patterns. A risk-scoring engine evaluates each API based on insecure authentication, 
-                dangerous HTTP methods, and exposure breadth. Results are presented through interactive tables, metrics, and visual charts for rapid situational awareness. The platform 
-                generates downloadable JSON and PDF reports, making findings easy to share with leadership and auditors. Tools used include Python, Streamlit, Pandas, Matplotlib, and 
-                ReportLab. 
-
-
-                In the real world, this solution helps organizations discover shadow APIs, reduce attack surface, improve API governance, support compliance, and proactively manage API 
-                security risk across modern enterprise environments.
-            </p>
-            <a class="app-link" href="https://kr8f6varvq9nrqqscblpnz.streamlit.app/" target="_blank">Open Application</a>
-        
-            </div>
-
-            <div class="app-section">
-            <h2>API-Simulation-&-Security-Analytics-Platform - Randy Singh</h2>
-            <p>                
-
-               The API Simulation & Security Analytics Platform is a secure, analyst-driven application designed to support defensive cyber operations, security testing, and operational  
-               readiness assessments across Department of Defense environments. The platform enables controlled generation of synthetic API traffic or ingestion of operational log data to 
-               evaluate system behavior under normal and adversarial conditions. Built using Python and Streamlit, the application provides an interactive, browser-based interface suitable 
-               for rapid deployment in classified, unclassified, or air-gapped networks. Pandas performs structured data ingestion, normalization, and analysis of API request and response 
-               activity, while Matplotlib delivers visual analytics to support situational awareness. The system applies deterministic anomaly detection logic to identify indicators of 
-               compromise, including authentication abuse, endpoint reconnaissance, and elevated error conditions. Session isolation and reset controls ensure repeatable testing and data 
-               integrity. PDF reporting capabilities support auditability, after-action reviews, and compliance documentation. 
-               In operational use, the platform enhances API visibility, reduces analyst workload, supports Zero Trust validation, and improves cyber defense readiness without reliance on 
-               production systems.
-            </p>
-            <a class="app-link" href="https://yeqe7fqks9uaosmyd65yt5.streamlit.app/" target="_blank">Open Application</a>        
-            </div>
-
-            <div class="app-section">
-            <h2>F5-BIG-IP-API-POSTURE MANAGEMENT - Randy Singh</h2>
-            <p>                
-
-               
-                This program is an API Posture Management dashboard designed to simulate, analyze, and assess API traffic using an F5 BIG-IP–style record schema. It generates realistic  
-                synthetic API traffic or ingests real F5 BIG-IP log data to discover active API endpoints and evaluate how those APIs are being used across the environment. The application 
-                analyzes usage patterns, HTTP status codes, error rates, and response latency to assess security, performance, and operational posture. It identifies abnormal behavior such 
-                as excessive failures, authentication issues, rate abuse, and backend instability, then assigns threat severity levels ranging from low to critical. The results are mapped 
-                to NIST security controls, DISA STIG requirements, and Zero Trust principles to support compliance and continuous verification. Interactive dashboards with tables, pie 
-                charts, and bar graphs provide clear visualization of API health and risk. 
-                The platform is built using Python with Streamlit for the user interface, Pandas for data analysis, Matplotlib for visualization, and ReportLab for generating DoD-ready PDF 
-                reports. 
-                In real-world environments, this solution helps security and DevSecOps teams proactively detect API risks, improve performance and resilience, support Zero Trust 
-                architectures, meet regulatory requirements, and translate raw API traffic into actionable security and compliance intelligence.
-            </p>
-            <a class="app-link" href="https://knet-brochure-i58rfbbeobyyybymxcwhqn.streamlit.app/ " target="_blank">Open Application</a>        
-            </div>
+    <!-- App 2 -->
+    <div class="card">
+        <h3>CyberIntelligence Platform</h3>
+        <p> Kalsnet (KNet) develops intelligent cybersecurity and AI applications that ingest real or synthetic data, analyze threats and anomalies, apply risk 
+            scoring and AI/ML models, and present actionable intelligence through interactive dashboards. Built primarily with Python, Streamlit, Pandas, NumPy,
+            Scikit-learn, Plotly/Matplotlib, NetworkX, Agentic AI, and MCP, these applications support threat detection, API security, Zero Trust, 
+            MITRE ATT&CK analysis, predictive analytics, and automated reporting. The solutions are designed to reduce analyst workload, improve situational 
+            awareness, accelerate incident response, and provide executives with clear, data-driven decision support.</p>
             
-             <div class="app-section">
-            <h2>API-RUNTIME-&-POSTURE-MANAGEMENT-PLATFORM - Randy Singh</h2>
-            <p>             
-               
-                This API Runtime & Posture Management Platform is a comprehensive, enterprise-grade tool designed to simulate, analyze, and visualize API behavior using both synthetic and 
-                real F5 BIG-IP–style data. It generates synthetic API traffic based on a configurable slider, simulating realistic API requests, response times, and HTTP status codes, 
-                while also supporting the upload of real-world CSV log data. The platform evaluates API performance and security posture by detecting anomalies in response times, 
-                identifying errors, calculating severity levels, and generating Zero Trust trust-scores for each API. It combines API discovery and runtime behavior analysis, mapping 
-                findings to NIST controls, DISA STIG references, and MITRE ATT&CK techniques, enabling organizations to align operations with cybersecurity best practices. 
-                 
-                The applicationleverages Python with Streamlit for an interactive web interface, pandas for data manipulation, matplotlib and seaborn for heatmaps and pie charts, and  
-                ReportLab for PDF export of DoD-ready reports. Users can toggle between Executive, SOC, and Engineer views to get tailored insights, while the dashboard highlights 
-                anomalies, threats, and provides actionable mitigation recommendations. Heatmaps and pie charts offer visual summaries of risk exposure, anomalies, and status code 
-                distributions, facilitating rapid decision-making. A robust reset function ensures fresh data generation, while the PDF export allows seamless reporting and compliance 
-                documentation. 
-
-                In the real world, this program empowers organizations to monitor API health, detect security threats, optimize performance, support compliance audits, and enhance 
-                situational awareness in both operational and security operations contexts. By integrating threat severity scoring, zero-trust assessment, and compliance mappings, it 
-                provides a proactive framework for managing API risks and ensuring resilience in complex enterprise environments.
-            </p>
-            <a class="app-link" href="https://jkafxvm2a5cmvpudryepta.streamlit.app/ " target="_blank">Open Application</a>        
-            </div>
-    
-            <div class="app-section">
-            <h2>Cyber-Threat-Hunting-Studio-AI/ML - Randy Singh</h2>
-            <p>          
-
-                The KNet Cyber Threat Hunting Studio – AI/ML Enterprise Platform is an interactive cybersecurity analytics application built using Python and Streamlit. It allows users to 
-                generate synthetic security telemetry or upload real-world CSV data representing user behavior, API usage, command activity, and data movement. The platform performs rule-
-                based threat hunting to detect suspicious logins, API abuse, command misuse, and potential data exfiltration. These findings are automatically mapped to the MITRE ATT&CK 
-                framework, providing industry-standard adversary context. In parallel, an AI/ML anomaly detection model (Isolation Forest) analyzes behavioral patterns to identify unusual 
-                activity that may not trigger traditional rules. The application provides record-level explainability, showing exactly why a specific event was flagged. It also generates 
-                AI-style remediation playbooks, offering actionable containment and prevention guidance for security teams. Visual analytics, including pie charts and interactive tables, 
-                help analysts quickly understand threat distribution. A one-click executive PDF report summarizes findings for leadership and compliance stakeholders.
-
-                Real-world benefits include faster threat detection, reduced false positives, improved incident response readiness, standardized security reporting, and a practical bridge 
-                between SOC operations and executive decision-making.
-            </p>
-            <a class="app-link" href="https://f97mvs6alzdfhyyohtomob.streamlit.app/ " target="_blank">Open Application</a>        
-            </div>
+        <a href="https://ugxgvm8syzxex7vmrwmp8f.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
 
-            <div class="app-section">
-            <h2>Supply-Chain-Risk-Estimator - Randy Singh</h2>
-            <p>
-                Analyzes SBOMs (Software Bills of Materials) for vulnerabilities, licensing issues, and trust risks.  
-                Uses <strong>Streamlit</strong>, <strong>Pandas</strong>, <strong>Matplotlib</strong>, and AI classifiers.  
-                <em>Benefit:</em> Allows proactive risk classification into Low, Medium, or High with exportable reports.
-            </p>
-            <a class="app-link" href="https://k8kopgxw6rayvcezgdjh5u.streamlit.app/" target="_blank">Open Application</a>
-        </div>
 
-        <div class="app-section">
-            <h2>Dental-Practice-Manager - Randy Singh</h2>
-            <p>
-                A management tool for dental offices supporting scheduling, billing, and patient records.  
-                Built on <strong>Streamlit</strong>, <strong>SQLite/Postgres</strong>, and task automation APIs.  
-                <em>Benefit:</em> Streamlines clinic operations and improves patient care efficiency.
-            </p>
-            <a class="app-link" href="https://bh7rkqzyztp7xkol2mxcr5.streamlit.app/" target="_blank">Open Application</a>
-        </div>
+    <!-- App 3 -->
+    <div class="card">
+        <h3>Agentic-AI-Multi-Use-Case-Cyber-Defense-Platform</h3>
+        <p> The KNet Agentic-AI Cyber Defense Platform is an advanced AI-powered cybersecurity analytics application designed to 
+            detect, analyze, and visualize enterprise security threats across multiple cyber defense use cases. 
+            Built using [Streamlit](https://streamlit.io?utm_source=chatgpt.com), Python, pandas, and Plotly, 
+            the platform generates detailed threat intelligence insights, risk interpretation, mitigation recommendations,
+            and executive cybersecurity reports.</p>
+            
+        <a href="https://ec5gxe3gm4vy8c3hzu6tjn.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-        <div class="app-section">
-            <h2>Synthetic-F5-NETSCOUT-PCAP-Generator - Randy Singh </h2>
-            <p>
-                Generates synthetic PCAP traffic files for network simulations.  
-                Uses <strong>Streamlit</strong>, <strong>Scapy</strong>, and traffic emulation libraries.  
-                <em>Benefit:</em> Useful for testing enterprise-grade network monitoring tools without real-world risks.
-            </p>
-            <a class="app-link" href="https://7dq7jn4z7vcmd2br8tugpe.streamlit.app/" target="_blank">Open Application</a>
-        </div>
+     <!-- App 3A -->
+    <div class="card">
+        <h3>Agentic-AI-Multi-Use-Case-Cyber-Defense-Platform1</h3>
+        <p> The KNet Agentic-AI Cyber Defense Platform is an advanced AI-powered cybersecurity analytics application
+            (Using LLMs Grouq & Gemini) designed to detect, analyze, and visualize enterprise security threats across 
+            multiple cyber defense use cases. Built using,Python, pandas, and Plotly, 
+            the platform generates detailed threat intelligence insights, risk interpretation, mitigation recommendations,
+            and executive cybersecurity reports.</p>
+            
+        <a href="https://hcxu6y4huuhh842pdqsyuo.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-        <div class="app-section">
-            <h2>Synthetic-Data-Generator - Randy Singh</h2>
-            <p>
-                Creates large, realistic datasets for AI/ML model training and testing.  
-                Built with <strong>Streamlit</strong>, <strong>Faker</strong>, <strong>Pandas</strong>, and export modules.  
-                <em>Benefit:</em> Provides abundant training data without privacy or compliance issues.
-            </p>
-            <a class="app-link" href="https://geu9ytpucrlxm6sp4dxrdk.streamlit.app/" target="_blank">Open Application</a>
-        </div>
-    </section>
+    <!-- App 4 -->
+    <div class="card">
+        <h3>Agentic-AI Cyber Range Advanced</h3>
+        <p> The -Agentic AI Cyber Range Platform- is a web-based cybersecurity training and simulation environment designed to demonstrate how modern organizations
+           detect, investigate, and respond to cyber threats. The application is developed using the Python framework Streamlit, which provides an interactive 
+           dashboard interface that allows users to simulate cyber-attack scenarios and defensive operations in real time. The platform contains a structured 
+           -attack library of common enterprise cyber threats-, including phishing, ransomware, SQL injection, insider threats, and cloud account compromise. 
+           Each attack scenario includes a clearly defined objective, target systems, entry method, and vulnerability, enabling the system to simulate how 
+           adversaries exploit weaknesses in enterprise environments.</p>
+        <a href="https://as8h5hfxsbjycs68mtwgkt.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+     <!-- App 5 -->
+    <div class="card">
+        <h3>Agentic-AI Cyber Range Testing</h3>
+        <p> This program is a Streamlit-based Enterprise Cyber Range SaaS simulation platform designed to emulate real-world Security Operations Center (SOC) 
+            environments in a safe, controlled setting. It allows users to generate synthetic cyberattack data using Faker, simulate multi-tenant SaaS 
+            environments, and analyze attack activity across different organizational roles (Admin, Instructor, Analyst). The system calculates dynamic 
+            risk scores based on severity, attack success, and response time, providing a realistic threat-scoring model. It integrates 
+            Scikit-learn’s Isolation Forest algorithm to perform AI-driven anomaly detection, identifying suspicious activity based on behavioral patterns.</p>
+        <a href="https://6rcznxwtphfg6pcuin6y22.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-    <!-- Contact -->
-    <section id="contact" class="section">
-        <h2>Contact Us</h2>
-        <p>If you'd Like to Schedule a Consultation, Please Reach Out Directly:</p>
-        <p><strong>Phone:</strong> 301-503-2918</p>
-        <p><strong>Email:</strong> <a href="mailto:singhr_52@yahoo.com" style="color:#1a73e8;">singhr_52@yahoo.com</a></p>
-    </section>
+    <!-- App 6 -->
+    <div class="card">
+        <h3>AI Threat Detection</h3>
+        <p>Machine learning-based anomaly detection using Isolation Forest.</p>
+        <a href="https://rcx76yfavqzygsdxvx5qfp.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-    <footer class="footer">
-        &copy; 2025 KALSNET (KNet) Consulting Services. All rights reserved.
-    </footer>
+    <!-- App 7 -->
+    <div class="card">
+        <h3>Fraud Detection System</h3>
+        <p>AI-powered financial fraud risk scoring and transaction monitoring.</p>
+        <a href="https://ogtmcqrtdkksqxkhstwime.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-    <script>
-        function toggleProgrammingHub() {
-            var hub = document.getElementById('programming-hub');
-            var brochure = document.getElementById('knet-brochure-section');
-            if (!hub) return;
-            var isOpen = (hub.style.display === 'block');
-            hub.style.display = 'none'; hub.setAttribute('aria-hidden','true');
-            if (brochure) { brochure.style.display = 'none'; brochure.setAttribute('aria-hidden','true'); }
-            if (!isOpen) { hub.style.display = 'block'; hub.setAttribute('aria-hidden','false'); hub.scrollIntoView({behavior:'smooth'}); }
-        }
+    <!-- App 8 -->
+    <div class="card">
+        <h3>Cyber Threat Hunting Dashboard</h3>
+        <p>Advanced threat hunting using behavioral analytics and MITRE ATT&CK mapping.</p>
+        <a href="https://scuhit9rqzk6iwx3rmwdrg.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-        function toggleBrochure() {
-            var hub = document.getElementById('programming-hub');
-            var brochure = document.getElementById('knet-brochure-section');
-            if (!brochure) return;
-            var isOpen = (brochure.style.display === 'block');
-            brochure.style.display = 'none'; brochure.setAttribute('aria-hidden','true');
-            if (hub) { hub.style.display = 'none'; hub.setAttribute('aria-hidden','true'); }
-            if (!isOpen) { brochure.style.display = 'block'; brochure.setAttribute('aria-hidden','false'); brochure.scrollIntoView({behavior:'smooth'}); }
-        }
+    <!-- App 9 -->
+    <div class="card">
+        <h3>API Security Analyzer Platform</h3>
+        <p>Detect API vulnerabilities, risk scoring, and compliance validation.</p>
+        <a href="https://yeqe7fqks9uaosmyd65yt5.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                var hub = document.getElementById('programming-hub');
-                var brochure = document.getElementById('knet-brochure-section');
-                if (hub) { hub.style.display = 'none'; hub.setAttribute('aria-hidden','true'); }
-                if (brochure) { brochure.style.display = 'none'; brochure.setAttribute('aria-hidden','true'); }
-            }
-        });
-    </script>
+    <!-- App 10 -->
+    <div class="card">
+        <h3>API Discovery And Risk Analytics Platform</h3>
+        <p>API Discovery and Risk Analytics platform that automatically discovers APIs from traffic data, assesses their security risk, 
+           and produces executive-ready reports.</p>
+        <a href="https://kr8f6varvq9nrqqscblpnz.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+     <!-- App 11 -->
+    <div class="card">
+        <h3>API Runtime Posture Management Platform</h3>
+        <p>API Runtime & Posture Management Platform is a comprehensive, enterprise-grade tool designed to simulate, analyze, and visualize API behavior using both synthetic 
+           and real F5 BIG-IP–style data & cybersecurity best practices.</p>
+        <a href="https://jkafxvm2a5cmvpudryepta.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+    <!-- App 12 -->
+    <div class="card">
+        <h3>MCP Cybersecurity Framework</h3>
+        <p>Comprehensive AI/ML-driven platform for monitoring, analyzing, and responding to cyber threats.</p>
+        <a href="https://iexfg4hykjjmoh9dddrqzi.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+    <!-- App 13 -->
+    <div class="card">
+        <h3>DoD War Planning Platform</h3>
+        <p>AI Controlled War Command Platform is an advanced AI-Driven Decision Support System designed to enable real-time operational awareness, 
+           intelligent threat evaluation, and optimized mission execution.</p>
+        <a href="https://dv9r45y2wcyuignojeqksf.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+    <!-- App 14 -->
+    <div class="card">
+        <h3>Global Threat 6G Use Case</h3>
+        <p>The AEGIS-6X application simulates a 6G-enabled, AI-driven threat intelligence platform that ingests real or synthetic threat data, 
+           applies machine-learning anomaly detection, and fuses edge and core risk signals into a unified risk score.</p>
+        <a href="https://dwlxcd8snh27zch6xo3a2h.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+    <!-- App 15-->
+    <div class="card">
+        <h3>Threat Hunting Studio - AI/ML Enterprise Platform</h3>
+        <p>Threat Hunting Studio With MITRE ATT&CK Mapping & AI Remediation Playbooks.</p>
+        <a href="https://f97mvs6alzdfhyyohtomob.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+     <!-- App 16-->
+    <div class="card">
+        <h3>Defense-In-Depth Cybersecurity Strategy - AI/ML Enterprise Platform</h3>
+        <p>The proposed Defense-in-Depth Cybersecurity Strategy Demo is a web-based, interactive platform designed 
+           to illustrate layered cybersecurity controls and operational risk management in accordance with DoD RMF and 
+           ATO readiness requirements.</p>
+        <a href="https://bfdhfqgbnjw63envpwzchk.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+    <!-- App 17 -->
+    <div class="card">
+        <h3>Compliance SOC Dashboard</h3>
+        <p>Threat Monitoring & Fedramp/DoD Commercial SOC</p>
+        <a href="https://uqhnd3kpuju3owr2pappyqe.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+
+    <!-- App 18 -->
+    <div class="card">
+        <h3>SIEM Enterprise Platform</h3>
+        <p>The SIEM Enterprise Platform provides an integrated, defense-in-depth cybersecurity capability designed to enhance 
+           situational awareness, threat detection, and compliance across Department of Defense information systems. </p>
+        <a href="https://7adgbaxncqkegfrfm6wsn2.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+
+     <!-- App 19 -->
+    <div class="card">
+        <h3>Supply Chain Risk Estimator</h3>
+        <p>Analyzes SBOMs (Software Bill of Materials) for vulnerabilities, licensing, and trust risks. </p>
+        <a href="https://k8kopgxw6rayvcezgdjh5u.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+<!-- App 20 -->
+    <div class="card">
+        <h3>Stock Comparison Tool</h3>
+        <p>Fetches historical stock data from Yahoo Finance, calculates P/E ratios, dividends, revenue, net margins, 
+           and one-year returns. </p>
+        <a href="https://dgavzmhe79aapp7ffqyh3kn.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+    <!-- App 21 -->
+    <div class="card">
+        <h3>Policy Developer AI Tool</h3>
+        <p>This tool helps organizations rapidly generate compliance-ready policies aligned with standards like
+           NIST, ISO, HIPAA, and GDPR, reducing manual drafting time from days to minutes. It is valuable for  
+          cybersecurity teams, compliance officers, auditors, and IT governance professionals who need consistent, auditable documentation. 
+          It also ensures standardization across enterprises, improves regulatory readiness, and reduces human error in policy creation. </p>
+        <a href="https://bfaz9gr8fz782p95aun5av.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+
+    <!-- App 22 -->
+    <div class="card">
+        <h3>AI Drone Inspection & Risk Assessment Platform </h3>
+        <p>This Streamlit-based application,  --KNet SkyGuard AI™ – AI Drone Inspection & Risk Assessment Platform--, 
+           is an intelligent dashboard designed to process, analyze, and visualize drone inspection data while automatically 
+           calculating risk scores for inspected assets. The system allows users to either upload real-world inspection datasets 
+           (CSV, Excel, or JSON) or generate synthetic drone inspection data for testing and simulation purposes. At its core, the program applies a 
+           weighted risk formula that evaluates four key factors—severity of damage, weather conditions, battery level, and AI confidence—to compute a 
+           final risk score for each inspection. The platform is built using   --Streamlit-- for the interactive web UI, --Pandas-- for data handling,   
+           --NumPy and Random-- for synthetic data generation, and --Plotly-- for real-time analytics visualizations such as histograms and scatter plots. 
+           It also integrates--ReportLab -- for PDF report generation and  --python-docx-- for Word document exports, enabling professional reporting in 
+           multiple formats including JSON for system integration. Users can navigate through modules like dashboard analytics, synthetic data generation, 
+          data upload, and export tools via a sidebar interface. In real-world use, this system supports drone-based infrastructure inspections in industries 
+          such as energy, construction, defense, and utilities by helping teams quickly identify high-risk assets and prioritize maintenance. 
+          It improves operational efficiency by reducing manual inspection effort, enhances safety by detecting high-risk conditions early, and supports 
+          compliance reporting through automated documentation. Overall, it acts as a lightweight AI-assisted decision-support tool for risk assessment and 
+          asset monitoring using drone-collected data.
+
+ </p>
+        <a href="https://fhpmvn3awub45a4svb9k5h.streamlit.app/" target="_blank" class="btn">Launch App</a>
+    </div>
+<footer>
+    © 2026 Kalsnet (KNet) Consulting | Cyber Defense & AI Solutions
+</footer>
+
 </body>
-
-
 </html>
