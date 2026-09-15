@@ -81,7 +81,7 @@
 <body>
 
 <header>
-    KALSNET (KNet) CYBER DEFENSE APPLICATIONS PORTAL
+    KALSNET (KNet) Universal Search Engines
 </header>
 
 <div class="container">
@@ -90,237 +90,21 @@
     <!-- App 1 -->
     <div class="card">
         <h3>CyberGuard-AI-Application</h3>
-        <p> CyberGuard AI is a Streamlit application platform showing 5 AI/ML-driven cybersecurity use cases:
-             Autonomous SOC triage
-             Vulnerability prioritization
-             Behavioral anomaly detection
-             Incident response/attack-path mapping
-             Identity & AI-agent risk scoring
-       How AI and cybersecurity intersect here: Cybersecurity has traditionally relied on static rules and known signatures, which break down against novel, 
-       fast-moving, or insider threats and generate overwhelming alert volume. AI addresses both problems at once — it detects patterns humans and rule-engines
-       miss, and it automates the repetitive scoring/triage work that consumes analyst time, letting a small security team operate at enterprise scale.
+        <p>
+            The Kalsnet Universal Search and Reasoning Engine is a Streamlit application that demonstrates roughly ninety (90) search and reasoning algorithms
+           organized into 13 categories, ranging from classical uninformed search like DFS and BFS, through heuristic methods like A Star, adversarial game 
+           search, optimization and constraint techniques, string and database search, graph algorithms, information retrieval, and modern AI methods like embeddings 
+           and RAG, to probabilistic, distributed, and cybersecurity focused search. Each technique runs against either synthetic data generated on the fly or data 
+           the user uploads, such as network graphs, documents, business records, or map coloring regions, with every generator now producing genuinely varied results 
+           instead of always defaulting to the same seed. Every algorithm's explanation now also states when to use it, its benefits, and real world use cases, and every
+           schema table documents exactly how each field's value is calculated. For the Modern AI and LLM category, the app can call a real OpenAI, Gemini, or Grok API key 
+           to generate embeddings or AI answers, falling back to transparent synthetic substitutes when no key is provided. Results are visualized with graphs, charts, 
+           or trees and can be exported as text, Word, PDF, or CSV summaries. </p>
             
-       AI's role: it moves each module beyond static rules by scoring, correlating, and prioritizing data the way an analyst would, then generating a recommended 
-       action automatically. In modules 1, 2, 4, and 5 that's rule-weighted AI scoring (feature-based formulas that blend severity, exploitability, exposure, 
-       dormancy, etc. into a single risk score). Module 3 uses real machine learning: scikit-learn's Isolation Forest, an unsupervised anomaly-detection algorithm 
-       that learns normal behavior patterns and flags statistical outliers without predefined rules or labeled attack data — the same category of technique 
-       (unsupervised/behavioral ML) that underpins modern EDR, UEBA, and cloud threat-detection products.
-
-        Stack: Python, Streamlit (UI), pandas/NumPy (data processing), scikit-learn (ML), NetworkX + Matplotlib (attack-path graphs/charts), python-docx and 
-        ReportLab (report export).
-
-        Real-world benefits: cuts SOC triage time by auto-correlating alerts into incidents, focuses patching on what attackers would actually exploit, catches 
-        novel/insider threats before signatures exist, speeds containment by reconstructing kill chains, and shrinks identity attack surface across humans, 
-        service accounts, and AI agents — with explainable, auditable scoring rather than a black box, reflecting where the industry is headed: 
-        AI-augmented defense that scales with the volume and speed of modern attacks.</p>
-            
-        <a href="https://36f6gbewyftjy2y8ey4vab.streamlit.app/" target="_blank" class="btn">Launch App</a>
+        <a href="https://cg3bymxnhewpu2xftzamwr.streamlit.app/" target="_blank" class="btn">Launch App</a>
     </div>
 
-    <!-- App 2 -->
-    <div class="card">
-        <h3>CyberIntelligence Platform</h3>
-        <p> Kalsnet (KNet) develops intelligent cybersecurity and AI applications that ingest real or synthetic data, analyze threats and anomalies, apply risk 
-            scoring and AI/ML models, and present actionable intelligence through interactive dashboards. Built primarily with Python, Streamlit, Pandas, NumPy,
-            Scikit-learn, Plotly/Matplotlib, NetworkX, Agentic AI, and MCP, these applications support threat detection, API security, Zero Trust, 
-            MITRE ATT&CK analysis, predictive analytics, and automated reporting. The solutions are designed to reduce analyst workload, improve situational 
-            awareness, accelerate incident response, and provide executives with clear, data-driven decision support.</p>
-            
-        <a href="https://ugxgvm8syzxex7vmrwmp8f.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-
-
-    <!-- App 3 -->
-    <div class="card">
-        <h3>Agentic-AI-Multi-Use-Case-Cyber-Defense-Platform</h3>
-        <p> The KNet Agentic-AI Cyber Defense Platform is an advanced AI-powered cybersecurity analytics application designed to 
-            detect, analyze, and visualize enterprise security threats across multiple cyber defense use cases. 
-            Built using [Streamlit](https://streamlit.io?utm_source=chatgpt.com), Python, pandas, and Plotly, 
-            the platform generates detailed threat intelligence insights, risk interpretation, mitigation recommendations,
-            and executive cybersecurity reports.</p>
-            
-        <a href="https://ec5gxe3gm4vy8c3hzu6tjn.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-     <!-- App 3A -->
-    <div class="card">
-        <h3>Agentic-AI-Multi-Use-Case-Cyber-Defense-Platform1</h3>
-        <p> The KNet Agentic-AI Cyber Defense Platform is an advanced AI-powered cybersecurity analytics application
-            (Using LLMs Grouq & Gemini) designed to detect, analyze, and visualize enterprise security threats across 
-            multiple cyber defense use cases. Built using,Python, pandas, and Plotly, 
-            the platform generates detailed threat intelligence insights, risk interpretation, mitigation recommendations,
-            and executive cybersecurity reports.</p>
-            
-        <a href="https://hcxu6y4huuhh842pdqsyuo.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 4 -->
-    <div class="card">
-        <h3>Agentic-AI Cyber Range Advanced</h3>
-        <p> The -Agentic AI Cyber Range Platform- is a web-based cybersecurity training and simulation environment designed to demonstrate how modern organizations
-           detect, investigate, and respond to cyber threats. The application is developed using the Python framework Streamlit, which provides an interactive 
-           dashboard interface that allows users to simulate cyber-attack scenarios and defensive operations in real time. The platform contains a structured 
-           -attack library of common enterprise cyber threats-, including phishing, ransomware, SQL injection, insider threats, and cloud account compromise. 
-           Each attack scenario includes a clearly defined objective, target systems, entry method, and vulnerability, enabling the system to simulate how 
-           adversaries exploit weaknesses in enterprise environments.</p>
-        <a href="https://as8h5hfxsbjycs68mtwgkt.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-     <!-- App 5 -->
-    <div class="card">
-        <h3>Agentic-AI Cyber Range Testing</h3>
-        <p> This program is a Streamlit-based Enterprise Cyber Range SaaS simulation platform designed to emulate real-world Security Operations Center (SOC) 
-            environments in a safe, controlled setting. It allows users to generate synthetic cyberattack data using Faker, simulate multi-tenant SaaS 
-            environments, and analyze attack activity across different organizational roles (Admin, Instructor, Analyst). The system calculates dynamic 
-            risk scores based on severity, attack success, and response time, providing a realistic threat-scoring model. It integrates 
-            Scikit-learn’s Isolation Forest algorithm to perform AI-driven anomaly detection, identifying suspicious activity based on behavioral patterns.</p>
-        <a href="https://6rcznxwtphfg6pcuin6y22.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 6 -->
-    <div class="card">
-        <h3>AI Threat Detection</h3>
-        <p>Machine learning-based anomaly detection using Isolation Forest.</p>
-        <a href="https://rcx76yfavqzygsdxvx5qfp.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 7 -->
-    <div class="card">
-        <h3>Fraud Detection System</h3>
-        <p>AI-powered financial fraud risk scoring and transaction monitoring.</p>
-        <a href="https://ogtmcqrtdkksqxkhstwime.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 8 -->
-    <div class="card">
-        <h3>Cyber Threat Hunting Dashboard</h3>
-        <p>Advanced threat hunting using behavioral analytics and MITRE ATT&CK mapping.</p>
-        <a href="https://scuhit9rqzk6iwx3rmwdrg.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 9 -->
-    <div class="card">
-        <h3>API Security Analyzer Platform</h3>
-        <p>Detect API vulnerabilities, risk scoring, and compliance validation.</p>
-        <a href="https://yeqe7fqks9uaosmyd65yt5.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 10 -->
-    <div class="card">
-        <h3>API Discovery And Risk Analytics Platform</h3>
-        <p>API Discovery and Risk Analytics platform that automatically discovers APIs from traffic data, assesses their security risk, 
-           and produces executive-ready reports.</p>
-        <a href="https://kr8f6varvq9nrqqscblpnz.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-     <!-- App 11 -->
-    <div class="card">
-        <h3>API Runtime Posture Management Platform</h3>
-        <p>API Runtime & Posture Management Platform is a comprehensive, enterprise-grade tool designed to simulate, analyze, and visualize API behavior using both synthetic 
-           and real F5 BIG-IP–style data & cybersecurity best practices.</p>
-        <a href="https://jkafxvm2a5cmvpudryepta.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-    <!-- App 12 -->
-    <div class="card">
-        <h3>MCP Cybersecurity Framework</h3>
-        <p>Comprehensive AI/ML-driven platform for monitoring, analyzing, and responding to cyber threats.</p>
-        <a href="https://iexfg4hykjjmoh9dddrqzi.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 13 -->
-    <div class="card">
-        <h3>DoD War Planning Platform</h3>
-        <p>AI Controlled War Command Platform is an advanced AI-Driven Decision Support System designed to enable real-time operational awareness, 
-           intelligent threat evaluation, and optimized mission execution.</p>
-        <a href="https://dv9r45y2wcyuignojeqksf.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 14 -->
-    <div class="card">
-        <h3>Global Threat 6G Use Case</h3>
-        <p>The AEGIS-6X application simulates a 6G-enabled, AI-driven threat intelligence platform that ingests real or synthetic threat data, 
-           applies machine-learning anomaly detection, and fuses edge and core risk signals into a unified risk score.</p>
-        <a href="https://dwlxcd8snh27zch6xo3a2h.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 15-->
-    <div class="card">
-        <h3>Threat Hunting Studio - AI/ML Enterprise Platform</h3>
-        <p>Threat Hunting Studio With MITRE ATT&CK Mapping & AI Remediation Playbooks.</p>
-        <a href="https://f97mvs6alzdfhyyohtomob.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-     <!-- App 16-->
-    <div class="card">
-        <h3>Defense-In-Depth Cybersecurity Strategy - AI/ML Enterprise Platform</h3>
-        <p>The proposed Defense-in-Depth Cybersecurity Strategy Demo is a web-based, interactive platform designed 
-           to illustrate layered cybersecurity controls and operational risk management in accordance with DoD RMF and 
-           ATO readiness requirements.</p>
-        <a href="https://bfdhfqgbnjw63envpwzchk.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 17 -->
-    <div class="card">
-        <h3>Compliance SOC Dashboard</h3>
-        <p>Threat Monitoring & Fedramp/DoD Commercial SOC</p>
-        <a href="https://uqhnd3kpuju3owr2pappyqe.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-
-    <!-- App 18 -->
-    <div class="card">
-        <h3>SIEM Enterprise Platform</h3>
-        <p>The SIEM Enterprise Platform provides an integrated, defense-in-depth cybersecurity capability designed to enhance 
-           situational awareness, threat detection, and compliance across Department of Defense information systems. </p>
-        <a href="https://7adgbaxncqkegfrfm6wsn2.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-
-     <!-- App 19 -->
-    <div class="card">
-        <h3>Supply Chain Risk Estimator</h3>
-        <p>Analyzes SBOMs (Software Bill of Materials) for vulnerabilities, licensing, and trust risks. </p>
-        <a href="https://k8kopgxw6rayvcezgdjh5u.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-<!-- App 20 -->
-    <div class="card">
-        <h3>Stock Comparison Tool</h3>
-        <p>Fetches historical stock data from Yahoo Finance, calculates P/E ratios, dividends, revenue, net margins, 
-           and one-year returns. </p>
-        <a href="https://dgavzmhe79aapp7ffqyh3kn.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-    <!-- App 21 -->
-    <div class="card">
-        <h3>Policy Developer AI Tool</h3>
-        <p>This tool helps organizations rapidly generate compliance-ready policies aligned with standards like
-           NIST, ISO, HIPAA, and GDPR, reducing manual drafting time from days to minutes. It is valuable for  
-          cybersecurity teams, compliance officers, auditors, and IT governance professionals who need consistent, auditable documentation. 
-          It also ensures standardization across enterprises, improves regulatory readiness, and reduces human error in policy creation. </p>
-        <a href="https://bfaz9gr8fz782p95aun5av.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
-
-    <!-- App 22 -->
-    <div class="card">
-        <h3>AI Drone Inspection & Risk Assessment Platform </h3>
-        <p>This Streamlit-based application,  --KNet SkyGuard AI™ – AI Drone Inspection & Risk Assessment Platform--, 
-           is an intelligent dashboard designed to process, analyze, and visualize drone inspection data while automatically 
-           calculating risk scores for inspected assets. The system allows users to either upload real-world inspection datasets 
-           (CSV, Excel, or JSON) or generate synthetic drone inspection data for testing and simulation purposes. At its core, the program applies a 
-           weighted risk formula that evaluates four key factors—severity of damage, weather conditions, battery level, and AI confidence—to compute a 
-           final risk score for each inspection. The platform is built using   --Streamlit-- for the interactive web UI, --Pandas-- for data handling,   
-           --NumPy and Random-- for synthetic data generation, and --Plotly-- for real-time analytics visualizations such as histograms and scatter plots. 
-           It also integrates--ReportLab -- for PDF report generation and  --python-docx-- for Word document exports, enabling professional reporting in 
-           multiple formats including JSON for system integration. Users can navigate through modules like dashboard analytics, synthetic data generation, 
-          data upload, and export tools via a sidebar interface. In real-world use, this system supports drone-based infrastructure inspections in industries 
-          such as energy, construction, defense, and utilities by helping teams quickly identify high-risk assets and prioritize maintenance. 
-          It improves operational efficiency by reducing manual inspection effort, enhances safety by detecting high-risk conditions early, and supports 
-          compliance reporting through automated documentation. Overall, it acts as a lightweight AI-assisted decision-support tool for risk assessment and 
-          asset monitoring using drone-collected data.
-
- </p>
-        <a href="https://fhpmvn3awub45a4svb9k5h.streamlit.app/" target="_blank" class="btn">Launch App</a>
-    </div>
+           
 <footer>
     © 2026 Kalsnet (KNet) Consulting | Cyber Defense & AI Solutions
 </footer>
